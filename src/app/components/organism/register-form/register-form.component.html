@@ -1,0 +1,17 @@
+<mat-card>
+    <form [formGroup]="registerForm" class="form-wrapper" (ngSubmit)="onSubmit()">
+        <mat-form-field class="form">
+            <mat-label>Email</mat-label>
+            <input matInput type="text" formControlName="email">
+        </mat-form-field>
+        <mat-form-field class="form" >
+            <mat-label>Username</mat-label>
+            <input matInput type="text" formControlName="username">
+        </mat-form-field>
+        <mat-form-field class="form">
+            <mat-label>Password</mat-label>
+            <input matInput type="text" formControlName="password" type="password">
+        </mat-form-field>
+        <button mat-stroked-button type="submit" >Register</button>
+    </form>
+</mat-card>

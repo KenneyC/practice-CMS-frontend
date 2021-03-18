@@ -1,0 +1,24 @@
+<mat-card>
+    <form [formGroup]="loginForm" class="form-wrapper" (ngSubmit)="onSubmit()">
+        <mat-form-field class="form" >
+            <mat-label>Username</mat-label>
+            <input matInput type="text" formControlName="username">
+            <div *ngIf="submitted && form.username.errors" class="invalid-feedback">
+                <div *ngIf="form.username.errors.required">Username is required</div>
+            </div>
+        </mat-form-field>
+        <mat-form-field class="form">
+            <mat-label>Password</mat-label>
+            <input matInput type="text" formControlName="password" type="password">
+            <div *ngIf="submitted && form.password.errors" class="invalid-feedback">
+                <div *ngIf="form.password.errors.required">Password is required</div>
+            </div>
+        </mat-form-field>
+        <button mat-stroked-button class="form-button" type="submit" >Login</button>
+        <button mat-stroked-button class="form-button" type="button" routerLink="/register" >Register</button>
+        <div class="spinner">
+            <mat-spinner *ngIf="loading" diameter=30></mat-spinner>
+        </div>
+        <div *ngIf="error" class="invalid-feedback">{{error}}</div>
+    </form>
+</mat-card>
