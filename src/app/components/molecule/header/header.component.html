@@ -1,0 +1,9 @@
+<mat-toolbar>
+    <button mat-button (click)="onBlogClick()">
+        Blogs
+    </button>
+    <span class="header-spacer"></span>
+    <button mat-button *ngIf="user !== null" (click)="onLogout()">
+      Logout
+    </button>
+</mat-toolbar>

@@ -1,0 +1,8 @@
+<div *ngFor="let blog of blogs">
+    <app-blog-post 
+        [title]="blog.title" 
+        [name]="blog.name"
+        [datestring]="blog.date"
+        [mainBody]="blog.mainBody" >
+    </app-blog-post>
+</div>

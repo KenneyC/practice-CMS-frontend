@@ -8,6 +8,7 @@ import {MatCardModule} from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
@@ -20,6 +21,9 @@ import { RegisterFormComponent } from './components/organism/register-form/regis
 import { RegisterPageComponent } from './pages/register/register.component';
 import { ErrorInterceptor } from './helper/error.interceptor';
 import { BlogPageComponent } from './pages/blog/blog.component';
+import { ReadBlogComponent } from './pages/read-blog/read-blog.component';
+import { HeaderComponent } from './components/molecule/header/header.component';
+import { BlogPostComponent } from './components/molecule/blog-post/blog-post.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,10 @@ import { BlogPageComponent } from './pages/blog/blog.component';
     BlogFormComponent,
     RegisterFormComponent,
     RegisterPageComponent,
-    BlogPageComponent
+    BlogPageComponent,
+    ReadBlogComponent,
+    HeaderComponent,
+    BlogPostComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +48,8 @@ import { BlogPageComponent } from './pages/blog/blog.component';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatToolbarModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

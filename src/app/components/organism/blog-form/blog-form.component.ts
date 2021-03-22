@@ -13,6 +13,7 @@ export class BlogFormComponent implements OnInit {
 	loading = false;
 	success = false;
 	error = '';
+	status = '';
 	
 
 	constructor(private formBuilder: FormBuilder, private blogServices: BlogServices) {}
@@ -41,10 +42,11 @@ export class BlogFormComponent implements OnInit {
 			title: this.form.title.value,
 			date: (new Date()).toISOString(),
 			name: this.form.name.value,
-			mainbody: this.form.mainbody.value
+			mainBody: this.form.mainbody.value
 		}).pipe(first()).subscribe( data => {
 			this.loading = false;
 			this.success = true;
+			this.status = data.message;
 		})
 	}
 

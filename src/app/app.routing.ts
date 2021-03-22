@@ -5,10 +5,12 @@ import { HomePageComponent } from './pages/home/home.component';
 import { AuthGuard } from './helper/auth.guard';
 import { RegisterPageComponent } from './pages/register/register.component';
 import { BlogPageComponent } from './pages/blog/blog.component';
+import { ReadBlogComponent } from './pages/read-blog/read-blog.component';
 
 const routes: Routes = [
     { path: '', component: HomePageComponent}, 
-    { path: 'blog', component: BlogPageComponent, canActivate: [AuthGuard]},
+    { path: 'newblog', component: BlogPageComponent, canActivate: [AuthGuard]},
+    { path: 'blog', component: ReadBlogComponent},
     { path: 'register', component: RegisterPageComponent}
 ];
 

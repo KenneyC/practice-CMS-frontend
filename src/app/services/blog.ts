@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
 import { Blog } from '../models/blog';
 
 @Injectable({
@@ -19,5 +18,9 @@ export class BlogServices {
 
     create(blog: Blog) {
         return this.http.post<any>('https://localhost:5001/create', {...blog}, { headers: this.headers}).pipe();
+    }
+
+    getAllBlog() {
+        return this.http.get<any>('https://localhost:5001/getallblogs', { headers: this.headers }).pipe();
     }
 }

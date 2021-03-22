@@ -17,4 +17,9 @@ export class AppComponent {
     };
     this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
   }
+
+  onLogout() {
+    this.authenticationService.logout();
+    this.router.navigate(['/']);
+  }
 }

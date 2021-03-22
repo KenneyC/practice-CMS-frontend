@@ -50,7 +50,7 @@ export class LoginForm implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
-                    this.router.navigate(['/blog']);
+                    this.router.navigate(['/newBlog']);
                     this.loading = false;
                 },
                 error => {
